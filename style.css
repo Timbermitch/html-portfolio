@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    color: #ededed;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+#logo {
+    position: relative;
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+    overflow: hidden; /* Ensures the text is hidden initially */
+    white-space: nowrap; /* Prevents text from wrapping */
+    animation: fade-in 3s forwards; /* Change to fade-in animation */
+    animation-fill-mode: forwards; /* Ensures the final state is maintained */
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00abf0;
+}
+
+.home{
+    height: 100vh;
+    background: url('home.png') no-repeat;
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+
+}
+
+.container {
+    width: 200px;
+    height: 100px;
+    position: relative; /* This is necessary for positioning child elements */
+    color: white; /* Adjust text color for better visibility */
+    padding: 10px; /* Optional: Add some padding for better text placement */
+}
+
+.container::after {
+    content: "";
+    background-image: url('mypic.png');
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: bottom right; /* Positions the image at the bottom right within the container */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    position: absolute;
+    bottom: -110px;
+    right: -50px;
+    left: 600px;
+    width: 550px; /* Adjust the width as needed */
+    height: 550px; /* Adjust the height as needed */
+    z-index: 0; /* Ensures the image is behind the text */
+    opacity: 0; /* Start with the image hidden */
+    overflow: hidden; /* Ensures the text is hidden initially */
+    white-space: nowrap; /* Prevents text from wrapping */
+    animation: slide-fade-in 6s forwards; /* Change to slide-fade-in animation */
+    animation-fill-mode: forwards; /* Ensures the final state is maintained */
+}
+.home-content {
+    max-width: 700px;
+
+}
+
+.home-content h1 {
+    position: relative;
+    top: 85px;
+    font-size: 51px;
+    font-weight: 600;
+    line-height: 1.2;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Start slightly below */
+    animation: fade-slide-up 2s ease-out forwards 0.5s; /* Animation */
+}
+
+.home-content h3 {
+    position: relative;
+    top: 75px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #00abf0;
+    overflow: hidden; /* Ensures the text is hidden initially */
+    white-space: nowrap; /* Prevents text from wrapping */
+    opacity: 0; /* Initially hidden */
+    animation: fade-scale 3s ease-in-out forwards 1s, rainbow-colors 5s infinite alternate; /* Animation with a delay */
+}
+
+.home-content p {
+    position: relative;
+    top: 50px;
+    font-size: 16px;
+    margin: 20px 0 40px;
+    overflow: hidden; /* Ensures the text is hidden initially */
+    white-space: normal; /* Allows text to wrap */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Start slightly below */
+    animation: fade-slide-up 2s ease-out forwards 1.5s; /* Animation with a delay */
+}
+
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    top: 30px;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+    opacity: 0; /* Initially hidden */
+    animation: fade-in 1s forwards 2s; /* Fade-in animation with a 3-second delay */
+    animation-fill-mode: forwards; /* Ensures the final state is maintained */
+}
+
+.btn-box a:hover {
+    color: #00abf0;
+}
+
+.btn-box a:nth-child(2) {
+    background: transparent;
+    color: #00abf0;
+}
+.btn-box a:nth-child(2):hover {
+    color: #081b29;
+}
+
+.btn-box a:nth-child(2)::before {
+    background: #00abf0;
+
+}
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 50;
+    left: 0;
+    bottom: 100;
+    width: 0;
+    height: 100%;
+    background: #000000;
+    z-index: -1;
+    transition: .5s;
+}
+.btn-box a:hover::before {
+    width: 100%;
+}
+.home-sci {
+    position: absolute;
+    bottom: 150px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+.home-sci::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+    opacity: 0; /* Initially hidden */
+}
+
+.home-sci a:hover {
+    color: #081b29;
+}
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a:hover::before {
+    color: #081b29;
+    width: 100%;
+}
+/* KEYFRAMES ANIMATION */
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+/* Fade-in and slide-up effect */
+@keyframes fade-slide-up {
+    to {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+@keyframes manipActiveHover {
+    100% {
+        pointer-events: auto;
+    }
+}
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Fade-in and scale effect */
+@keyframes fade-scale {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* Rainbow color transition effect */
+@keyframes rainbow-colors {
+    0% {
+        color: #ff0000; /* Red */
+    }
+    20% {
+        color: #ff7f00; /* Orange */
+    }
+    40% {
+        color: #ffff00; /* Yellow */
+    }
+    60% {
+        color: #00ff00; /* Green */
+    }
+    80% {
+        color: #0000ff; /* Blue */
+    }
+    100% {
+        color: #8b00ff; /* Violet */
+    }
+}
+@keyframes slide-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateX(100%); /* Start off-screen to the right and smaller */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Fully visible and in place */
+    }
+}
+/* Fade-in and slide-up effect */
+@keyframes fade-slide-up {
+    to {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Move to original position */
+    }
+}
