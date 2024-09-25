@@ -328,3 +328,127 @@ body {
         transform: translateY(0); /* Move to original position */
     }
 }
+
+@media (max-width: 480px) {
+    .home-sci {
+            position: absolute;
+            bottom: 170px;
+            width: 170px;
+            display: flex;
+            justify-content: space-between;
+        }
+    
+    .home-content h1 {
+        top: 15px;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .home-content h3 {
+        top: 10px;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .home-content p {
+        position: relative;
+        top: -10px;
+        font-size: 13px;
+    }
+    .navbar a {
+        font-size: 13px;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-right: 20px;
+        transition: .3s;
+        top: 15px;
+    }
+    #logo {
+        position: relative;
+        font-size: 15px;
+        width: 100px;
+        color: #ededed;
+        text-decoration: none;
+        font-weight: 600;
+    }
+    .container::after {
+        bottom: -120px;
+        right: 100px;
+        left: 160px;
+        width: 270px; /* Adjust the width as needed */
+        height: 270px; /* Adjust the height as needed */
+
+    }
+
+    .btn-box a {
+        top: -40px;
+    }
+}
+    
+@media (max-width: 1280px) {
+    #logo {
+        position: relative;
+        font-size: 25px;
+        color: #ededed;
+        text-decoration: none;
+        font-weight: 600;
+        overflow: hidden; /* Ensures the text is hidden initially */
+        white-space: nowrap; /* Prevents text from wrapping */
+        animation: fade-in 3s forwards; /* Change to fade-in animation */
+        animation-fill-mode: forwards; /* Ensures the final state is maintained */
+    }
+    
+    .navbar a {
+        font-size: 18px;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 35px;
+        transition: .3s;
+    }
+    .home-content h1 {
+        position: relative;
+        top: 85px;
+        font-size: 51px;
+        font-weight: 600;
+    }
+    
+    .home-content h3 {
+        position: relative;
+        top: 75px;
+        font-size: 32px;
+        font-weight: 600;
+    }
+    
+    .home-content p {
+        position: relative;
+        top: 50px;
+        font-size: 16px;
+        margin: 20px 0 40px;
+    }
+    .btn-box a {
+    width: 150px;
+    height: 100%;
+    top: 30px;
+    }
+    .home-sci {
+      bottom: 150px;
+      width: 170px;
+}
+.home-sci a {
+    width: 40px;
+    height: 40px;
+}
+.container::after {
+    content: "";
+    background-image: url('mypic.png');
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: bottom right; /* Positions the image at the bottom right within the container */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    position: absolute;
+    bottom: -110px;
+    right: -50px;
+    left: 600px;
+    width: 550px; /* Adjust the width as needed */
+    height: 550px; /* Adjust the height as needed */
+    }
+}
